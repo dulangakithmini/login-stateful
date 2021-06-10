@@ -37,6 +37,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// Set the keyboard type to optimize for email addresses
       keyboardType: TextInputType.emailAddress,
+      validator: (String value) {
+        /// Return null if valid. Return a String( with the error message) if invalid
+        if (!value.contains('@')) {
+          return 'Enter a valid Email address!';
+        }
+        return null;
+      },
     );
   }
 
@@ -53,7 +60,6 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget submitButton() {
     return Container(
-
       /// Create an ElevatedButton
       child: ElevatedButton(
         onPressed: () {

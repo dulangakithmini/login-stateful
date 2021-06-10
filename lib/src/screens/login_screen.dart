@@ -27,6 +27,7 @@ class _LoginScreenState extends State<LoginScreen> {
         labelText: 'Email',
         hintText: 'me@text.com',
       ),
+      /// Set the keyboard type to optimize for email addresses
       keyboardType: TextInputType.emailAddress,
     );
   }
@@ -36,6 +37,9 @@ class _LoginScreenState extends State<LoginScreen> {
       decoration: const InputDecoration(
         labelText: 'Password',
       ),
+
+      /// Set obscureText to true to make the entered password appear in dots
+      obscureText: true,
     );
   }
 }

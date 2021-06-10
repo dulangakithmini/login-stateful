@@ -6,6 +6,10 @@ class LoginScreen extends StatefulWidget {
 }
 
 class _LoginScreenState extends State<LoginScreen> {
+  /// Create a new instance variable to store the Globalkey
+  /// FormState class is referenced to the GlobalKey
+  final formKey = GlobalKey<FormState>();
+
   @override
   Widget build(BuildContext context) {
     return Container(
@@ -47,6 +51,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget submitButton() {
     return Container(
+
       /// Create an ElevatedButton
       child: ElevatedButton(
         onPressed: () {},
@@ -54,6 +59,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
         /// Get styles to ElevatedButton
         style: ElevatedButton.styleFrom(
+
           /// Color of the text on the button
           onPrimary: Colors.black,
         ),

@@ -23,13 +23,18 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget emailField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: 'Email'),
+      decoration: const InputDecoration(
+        labelText: 'Email',
+        hintText: 'me@text.com',
+      ),
     );
   }
 
   Widget passwordField() {
     return TextFormField(
-      decoration: const InputDecoration(labelText: 'Password'),
+      decoration: const InputDecoration(
+        labelText: 'Password',
+      ),
     );
   }
 }

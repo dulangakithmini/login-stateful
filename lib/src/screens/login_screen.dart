@@ -15,6 +15,8 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Form(
+        /// Associate the created GlobalKey with the Form we are creating
+        key: formKey,
         child: Column(
           children: [
             emailField(),

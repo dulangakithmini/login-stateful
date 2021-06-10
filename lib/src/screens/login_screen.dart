@@ -56,12 +56,14 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// Create an ElevatedButton
       child: ElevatedButton(
-        onPressed: () {},
+        onPressed: () {
+          /// Reset all the FormFields
+          formKey.currentState.reset();
+        },
         child: Text('Submit'),
 
         /// Get styles to ElevatedButton
         style: ElevatedButton.styleFrom(
-
           /// Color of the text on the button
           onPrimary: Colors.black,
         ),

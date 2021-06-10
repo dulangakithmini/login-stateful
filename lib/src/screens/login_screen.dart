@@ -55,6 +55,12 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// Set obscureText to true to make the entered password appear in dots
       obscureText: true,
+      validator: (String value) {
+        if (value.length < 8) {
+          return 'Enter a password of 8 characters';
+        }
+        return null;
+      },
     );
   }
 
@@ -64,7 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
       child: ElevatedButton(
         onPressed: () {
           /// Reset all the FormFields
-          formKey.currentState.reset();
+          // formKey.currentState.reset();
         },
         child: Text('Submit'),
 

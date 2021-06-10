@@ -10,7 +10,9 @@ class _LoginScreenState extends State<LoginScreen> {
   Widget build(BuildContext context) {
     return Container(
       margin: EdgeInsets.all(20.0),
-      child: Form(),
+      child: Form(
+        child: Column(),
+      ),
     );
   }
 }

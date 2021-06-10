@@ -15,6 +15,7 @@ class _LoginScreenState extends State<LoginScreen> {
           children: [
             emailField(),
             passwordField(),
+            submitButton(),
           ],
         ),
       ),
@@ -27,6 +28,7 @@ class _LoginScreenState extends State<LoginScreen> {
         labelText: 'Email',
         hintText: 'me@text.com',
       ),
+
       /// Set the keyboard type to optimize for email addresses
       keyboardType: TextInputType.emailAddress,
     );
@@ -40,6 +42,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// Set obscureText to true to make the entered password appear in dots
       obscureText: true,
+    );
+  }
+
+  Widget submitButton() {
+    return ElevatedButton(
+      onPressed: () {},
+      child: Text('Submit'),
     );
   }
 }

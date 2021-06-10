@@ -46,16 +46,21 @@ class _LoginScreenState extends State<LoginScreen> {
   }
 
   Widget submitButton() {
-    /// Create an ElevatedButton
-    return ElevatedButton(
-      onPressed: () {},
-      child: Text('Submit'),
+    return Container(
+      /// Create an ElevatedButton
+      child: ElevatedButton(
+        onPressed: () {},
+        child: Text('Submit'),
 
-      /// Get styles to ElevatedButton
-      style: ElevatedButton.styleFrom(
-        /// Color of the text on the button
-        onPrimary: Colors.black,
+        /// Get styles to ElevatedButton
+        style: ElevatedButton.styleFrom(
+          /// Color of the text on the button
+          onPrimary: Colors.black,
+        ),
       ),
+
+      /// Add margin to the top of the button
+      margin: EdgeInsets.only(top: 20.0),
     );
   }
 }

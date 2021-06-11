@@ -47,7 +47,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
-        print(value);
+        email = value;
       },
     );
   }
@@ -67,7 +67,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
-        print(value);
+        password = value;
       },
     );
   }

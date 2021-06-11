@@ -9,6 +9,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// Create a new instance variable to store the Globalkey
   /// FormState class is referenced to the GlobalKey
   final formKey = GlobalKey<FormState>();
+
+  /// Create instance variables to keep input email and password
   String email = '';
   String password = '';
 
@@ -47,6 +49,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
+        /// Assign the input email to email variable
         email = value;
       },
     );
@@ -67,6 +70,7 @@ class _LoginScreenState extends State<LoginScreen> {
         return null;
       },
       onSaved: (String value) {
+        /// Assign the input password to password variable
         password = value;
       },
     );
@@ -86,6 +90,7 @@ class _LoginScreenState extends State<LoginScreen> {
           /// If valid, save
           if (formKey.currentState.validate()) {
             formKey.currentState.save();
+            print('Post $email and $password to the API');
           }
         },
         child: Text('Submit'),

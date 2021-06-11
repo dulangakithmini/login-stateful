@@ -1,12 +1,14 @@
 import 'package:flutter/material.dart';
-import 'package:login_stateful/src/mixins/validation_mixin.dart';
+import '../mixins/validation_mixin.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
   _LoginScreenState createState() => _LoginScreenState();
 }
 
+///To add all the functionality in the ValidationMixin, add "with ValidationMixin" after the extends statement
 class _LoginScreenState extends State<LoginScreen> {
+
   /// Create a new instance variable to store the Globalkey
   /// FormState class is referenced to the GlobalKey
   final formKey = GlobalKey<FormState>();
@@ -20,6 +22,7 @@ class _LoginScreenState extends State<LoginScreen> {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Form(
+
         /// Associate the created GlobalKey with the Form we are creating
         key: formKey,
         child: Column(
@@ -35,22 +38,23 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget emailField() {
     return TextFormField(
-        decoration: const InputDecoration(
-          labelText: 'Email',
-          hintText: 'me@text.com',
-        ),
+      decoration: const InputDecoration(
+        labelText: 'Email',
+        hintText: 'me@text.com',
+      ),
 
-        /// Set the keyboard type to optimize for email addresses
-        keyboardType: TextInputType.emailAddress,
-        validator:
-        // (String value) {
-        /// Return null if valid. Return a String( with the error message) if invalid
-        //   if (!value.contains('@')) {
-        //     return 'Enter a valid Email address!';
-        //   }
-        //   return null;
-        // },
-        onSaved: (String value) {
+      /// Set the keyboard type to optimize for email addresses
+      keyboardType: TextInputType.emailAddress,
+      validator
+      :,
+      // (String value) {
+      /// Return null if valid. Return a String( with the error message) if invalid
+      //   if (!value.contains('@')) {
+      //     return 'Enter a valid Email address!';
+      //   }
+      //   return null;
+      // },
+      onSaved: (String value) {
         /// Assign the input email to email variable
         email = value;
       },
@@ -65,12 +69,13 @@ class _LoginScreenState extends State<LoginScreen> {
 
       /// Set obscureText to true to make the entered password appear in dots
       obscureText: true,
-      validator: (String value) {
-        if (value.length < 8) {
-          return 'Enter a password of 8 characters';
-        }
-        return null;
-      },
+      validator:,
+      //     (String value) {
+      //   if (value.length < 8) {
+      //     return 'Enter a password of 8 characters';
+      //   }
+      //   return null;
+      // },
       onSaved: (String value) {
         /// Assign the input password to password variable
         password = value;
@@ -80,6 +85,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget submitButton() {
     return Container(
+
       /// Create an ElevatedButton
       child: ElevatedButton(
         onPressed: () {
@@ -99,6 +105,7 @@ class _LoginScreenState extends State<LoginScreen> {
 
         /// Get styles to ElevatedButton
         style: ElevatedButton.styleFrom(
+
           /// Color of the text on the button
           onPrimary: Colors.black,
         ),

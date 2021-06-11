@@ -10,7 +10,7 @@ class LoginScreen extends StatefulWidget {
 ///To add all the functionality in the ValidationMixin, add "with ValidationMixin" after the extends statement
 /// Take all the functionality from the State class and ValidationMixin class
 class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
-  /// Create a new instance variable to store the Globalkey
+  /// Create a new instance variable to store the GlobalKey
   /// FormState class is referenced to the GlobalKey
   final formKey = GlobalKey<FormState>();
 

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:login_stateful/src/mixins/validation_mixin.dart';
 
 class LoginScreen extends StatefulWidget {
   @override
@@ -34,21 +35,22 @@ class _LoginScreenState extends State<LoginScreen> {
 
   Widget emailField() {
     return TextFormField(
-      decoration: const InputDecoration(
-        labelText: 'Email',
-        hintText: 'me@text.com',
-      ),
+        decoration: const InputDecoration(
+          labelText: 'Email',
+          hintText: 'me@text.com',
+        ),
 
-      /// Set the keyboard type to optimize for email addresses
-      keyboardType: TextInputType.emailAddress,
-      validator: (String value) {
+        /// Set the keyboard type to optimize for email addresses
+        keyboardType: TextInputType.emailAddress,
+        validator:
+        // (String value) {
         /// Return null if valid. Return a String( with the error message) if invalid
-        if (!value.contains('@')) {
-          return 'Enter a valid Email address!';
-        }
-        return null;
-      },
-      onSaved: (String value) {
+        //   if (!value.contains('@')) {
+        //     return 'Enter a valid Email address!';
+        //   }
+        //   return null;
+        // },
+        onSaved: (String value) {
         /// Assign the input email to email variable
         email = value;
       },

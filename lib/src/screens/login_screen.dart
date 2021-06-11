@@ -75,11 +75,16 @@ class _LoginScreenState extends State<LoginScreen> {
       /// Create an ElevatedButton
       child: ElevatedButton(
         onPressed: () {
-          /// Validate TextFormFields
-          formKey.currentState.validate();
-
           /// Reset all the FormFields
           // formKey.currentState.reset();
+
+          /// Validate TextFormFields
+          // formKey.currentState.validate();
+
+          /// If valid, save
+          if (formKey.currentState.validate()) {
+            formKey.currentState.save();
+          }
         },
         child: Text('Submit'),
 

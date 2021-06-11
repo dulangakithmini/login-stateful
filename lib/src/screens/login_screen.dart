@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+
 import '../mixins/validation_mixin.dart';
 
 class LoginScreen extends StatefulWidget {
@@ -9,7 +10,6 @@ class LoginScreen extends StatefulWidget {
 ///To add all the functionality in the ValidationMixin, add "with ValidationMixin" after the extends statement
 /// Take all the functionality from the State class and ValidationMixin class
 class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
-
   /// Create a new instance variable to store the Globalkey
   /// FormState class is referenced to the GlobalKey
   final formKey = GlobalKey<FormState>();
@@ -23,7 +23,6 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
     return Container(
       margin: EdgeInsets.all(20.0),
       child: Form(
-
         /// Associate the created GlobalKey with the Form we are creating
         key: formKey,
         child: Column(
@@ -46,8 +45,9 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
       /// Set the keyboard type to optimize for email addresses
       keyboardType: TextInputType.emailAddress,
-      validator
-      :,
+
+      /// Reference the validateEmail function defined inside the ValidationMixin class
+      validator: validateEmail,
       // (String value) {
       /// Return null if valid. Return a String( with the error message) if invalid
       //   if (!value.contains('@')) {
@@ -70,7 +70,9 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
       /// Set obscureText to true to make the entered password appear in dots
       obscureText: true,
-      validator:,
+
+      /// Reference the validatePassword function defined inside the ValidationMixin class
+      validator: validatePassword,
       //     (String value) {
       //   if (value.length < 8) {
       //     return 'Enter a password of 8 characters';
@@ -86,7 +88,6 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
   Widget submitButton() {
     return Container(
-
       /// Create an ElevatedButton
       child: ElevatedButton(
         onPressed: () {
@@ -106,7 +107,6 @@ class _LoginScreenState extends State<LoginScreen> with ValidationMixin {
 
         /// Get styles to ElevatedButton
         style: ElevatedButton.styleFrom(
-
           /// Color of the text on the button
           onPrimary: Colors.black,
         ),

@@ -64,6 +64,9 @@ class _LoginScreenState extends State<LoginScreen> {
         }
         return null;
       },
+      onSaved: (String value) {
+        print(value);
+      },
     );
   }
 

@@ -9,6 +9,8 @@ class _LoginScreenState extends State<LoginScreen> {
   /// Create a new instance variable to store the Globalkey
   /// FormState class is referenced to the GlobalKey
   final formKey = GlobalKey<FormState>();
+  String email = '';
+  String password = '';
 
   @override
   Widget build(BuildContext context) {
